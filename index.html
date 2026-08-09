@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D'Iris Beauty Salon – Morris Park, Bronx</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1a0a0e;
+    --rose: #b5475a;
+    --blush: #f5e6e9;
+    --cream: #fdf8f5;
+    --gold: #c89a6e;
+    --muted: #7a5a62;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(253,248,245,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e8d5d9;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--rose); letter-spacing: 0.02em; }
+  .nav-cta {
+    background: var(--rose); color: #fff;
+    padding: 9px 20px; border-radius: 30px;
+    text-decoration: none; font-size: 0.85rem; font-weight: 500;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #2a0a14 0%, #1a0610 50%, #3d1020 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 100px 24px 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 40%, rgba(181,71,90,0.25) 0%, transparent 60%);
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 6px 16px; border-radius: 30px; margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 8vw, 4.5rem);
+    color: #fff; line-height: 1.1; margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--rose); }
+  .hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 380px; margin: 0 auto 36px; line-height: 1.7; }
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .btn-primary {
+    background: var(--rose); color: #fff;
+    padding: 14px 28px; border-radius: 30px;
+    text-decoration: none; font-weight: 500; font-size: 0.9rem;
+  }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.4); color: #fff;
+    padding: 14px 28px; border-radius: 30px;
+    text-decoration: none; font-size: 0.9rem;
+  }
+  .rating-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 18px; border-radius: 30px; color: #fff; font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+  .stars { color: #f4c542; }
+
+  /* SERVICES */
+  .section { padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 10px;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 40px; color: var(--ink);
+  }
+
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .service-card {
+    background: #fff; border: 1px solid #ead0d5;
+    border-radius: 12px; padding: 22px 20px;
+  }
+  .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 4px; color: var(--ink); }
+  .service-card p { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
+  .price { font-weight: 500; color: var(--rose); font-size: 0.9rem; }
+
+  /* HOURS */
+  .hours-section {
+    background: linear-gradient(135deg, #2a0a14, #3d1020);
+    padding: 80px 24px; color: #fff; text-align: center;
+  }
+  .hours-section .section-label { color: var(--gold); }
+  .hours-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 36px; }
+  .hours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; max-width: 600px; margin: 0 auto 40px; }
+  .hours-row { background: rgba(255,255,255,0.05); padding: 14px 16px; display: flex; justify-content: space-between; font-size: 0.85rem; }
+  .hours-row .day { color: rgba(255,255,255,0.6); }
+  .hours-row .time { color: #fff; font-weight: 500; }
+  .hours-row.closed .time { color: var(--rose); }
+
+  /* CONTACT */
+  .contact-section { padding: 80px 24px; text-align: center; background: var(--blush); }
+  .contact-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 8px; }
+  .contact-section p { color: var(--muted); margin-bottom: 32px; }
+  .contact-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  .contact-btns a {
+    display: flex; align-items: center; gap: 8px;
+    padding: 14px 26px; border-radius: 30px; text-decoration: none;
+    font-weight: 500; font-size: 0.9rem;
+  }
+  .btn-call { background: var(--rose); color: #fff; }
+  .btn-map { background: var(--ink); color: #fff; }
+  .btn-ig { background: linear-gradient(135deg, #405de6, #c13584); color: #fff; }
+
+  .address-line { font-size: 0.85rem; color: var(--muted); margin-top: 24px; }
+
+  /* GALLERY */
+  .gallery-section { padding: 80px 24px; background: var(--blush); }
+  .gallery-inner { max-width: 800px; margin: 0 auto; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-top: 36px;
+  }
+  .gallery-slot {
+    aspect-ratio: 1;
+    background: #e8d0d5;
+    border-radius: 10px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px; text-align: center; padding: 12px;
+    border: 2px dashed #c9a0aa;
+    position: relative; overflow: hidden;
+  }
+  .gallery-slot .cam { font-size: 1.6rem; opacity: 0.5; }
+  .gallery-slot .soon { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  .gallery-slot .label { font-size: 0.72rem; color: var(--rose); font-weight: 500; }
+
+  /* REVIEWS */
+  .reviews-section { padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+  .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+  .review-card {
+    background: #fff; border: 1px solid #ead0d5; border-radius: 12px; padding: 22px 20px;
+    border-left: 4px solid var(--rose);
+  }
+  .review-stars { color: #f4c542; font-size: 0.85rem; margin-bottom: 8px; }
+  .review-text { font-size: 0.84rem; color: #444; line-height: 1.65; margin-bottom: 14px; font-style: italic; }
+  .review-author { font-size: 0.75rem; font-weight: 600; color: var(--rose); letter-spacing: 0.04em; }
+  .review-date { font-size: 0.72rem; color: var(--muted); }
+  .google-logo { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 0.7rem; color: var(--muted); }
+
+  @media(max-width: 520px) {
+    .services-grid { grid-template-columns: 1fr; }
+    nav .nav-logo { font-size: 1rem; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">D'Iris Beauty Salon</span>
+  <a href="tel:3472819339" class="nav-cta">Call to Book</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Dominican Hair Salon · Morris Park, Bronx</div>
+  <h1>Your Hair,<br><em>Transformed.</em></h1>
+  <p>Expert balayage, extensions, braiding, curly hair styling, and full color services — all in one warm, welcoming salon.</p>
+  <div class="hero-btns">
+    <a href="tel:3472819339" class="btn-primary">📞 Call (347) 281-9339</a>
+    <a href="#services" class="btn-outline">View Services</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-label">What We Do</div>
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Women's Haircut</h3>
+      <p>Precision cut tailored to your face shape and hair texture</p>
+      <span class="price">Starting at $35+</span>
+    </div>
+    <div class="service-card">
+      <h3>Balayage & Highlights</h3>
+      <p>Sun-kissed color blends, hand-painted or foil highlights</p>
+      <span class="price">Starting at $90+</span>
+    </div>
+    <div class="service-card">
+      <h3>Blow Dry & Style</h3>
+      <p>Silky smooth Dominican blow-out or voluminous curls</p>
+      <span class="price">Starting at $40+</span>
+    </div>
+    <div class="service-card">
+      <h3>Hair Coloring</h3>
+      <p>Full color, root touch-up, toning, and fashion colors</p>
+      <span class="price">Starting at $60+</span>
+    </div>
+    <div class="service-card">
+      <h3>Keratin Treatment</h3>
+      <p>Long-lasting smoothing treatment — results up to 3 months</p>
+      <span class="price">Starting at $120+</span>
+    </div>
+    <div class="service-card">
+      <h3>Hair Extensions & Weaves</h3>
+      <p>Sew-in, clip-in, and tape-in extensions for length and volume</p>
+      <span class="price">Starting at $80+</span>
+    </div>
+    <div class="service-card">
+      <h3>Hair Braiding</h3>
+      <p>Box braids, cornrows, and protective styles</p>
+      <span class="price">Starting at $50+</span>
+    </div>
+    <div class="service-card">
+      <h3>Curly Hair Styling</h3>
+      <p>Specialized care for all curl patterns — defined and frizz-free</p>
+      <span class="price">Starting at $45+</span>
+    </div>
+  </div>
+  <p style="margin-top:20px; font-size:0.8rem; color:var(--muted);">* Walk-ins welcome. Call for exact pricing. Nails & toes available too!</p>
+</section>
+
+<!-- HOURS -->
+<section class="hours-section">
+  <div class="section-label">We're Open</div>
+  <h2>Hours of Operation</h2>
+  <div class="hours-grid" style="display:block; max-width:420px; margin:0 auto 40px;">
+    <div class="hours-row closed"><span class="day">Monday</span><span class="time">Closed</span></div>
+    <div class="hours-row"><span class="day">Tuesday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+    <div class="hours-row"><span class="day">Wednesday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+    <div class="hours-row"><span class="day">Thursday</span><span class="time">9:00 AM – 7:00 PM</span></div>
+    <div class="hours-row"><span class="day">Friday</span><span class="time">9:00 AM – 7:00 PM</span></div>
+    <div class="hours-row"><span class="day">Saturday</span><span class="time">8:00 AM – 7:00 PM</span></div>
+    <div class="hours-row"><span class="day">Sunday</span><span class="time">8:00 AM – 3:00 PM</span></div>
+  </div>
+  <a href="tel:3472819339" class="btn-primary" style="display:inline-block; margin:0 auto;">📞 Call to Book an Appointment</a>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-inner">
+    <div class="section-label">Our Work</div>
+    <h2 style="font-family:'Playfair Display',serif;">Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-slot"><span class="cam">📷</span><span class="soon">Coming Soon</span><span class="label">Balayage</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span class="soon">Coming Soon</span><span class="label">Braiding</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span class="soon">Coming Soon</span><span class="label">Keratin</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span class="soon">Coming Soon</span><span class="label">Extensions</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span class="soon">Coming Soon</span><span class="label">Curly Styling</span></div>
+      <div class="gallery-slot"><span class="cam">📷</span><span class="soon">Coming Soon</span><span class="label">Salon Interior</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="section-label">Testimonials</div>
+  <h2 style="font-family:'Playfair Display',serif;">What Clients Say</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Was searching for an open Dominican salon last minute for an emergency — they handled her afro hair with real care, no damage at all.</p>
+      <div class="review-author">Google Reviewer</div>
+      <div class="review-date">via Google</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Drives 45 minutes just for her hair — the staff are pleasant, the shop is clean, and they treat you like family.</p>
+      <div class="review-author">Google Reviewer</div>
+      <div class="review-date">via Google</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Asked for short long layers and left with healthy, voluminous hair — attentive, quick, and friendly staff.</p>
+      <div class="review-author">Kirsary C.</div>
+      <div class="review-date">via Google</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Recommended by a friend, went once, and already knows she's going back — got exactly the style she asked for.</p>
+      <div class="review-author">Google Reviewer</div>
+      <div class="review-date">via Google</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="section-label">Find Us</div>
+  <h2>Come Visit Us</h2>
+  <p>1003 Morris Park Ave, Bronx, NY 10462</p>
+  <div class="contact-btns">
+    <a href="tel:3472819339" class="btn-call">📞 (347) 281-9339</a>
+    <a href="https://maps.google.com/?q=1003+Morris+Park+Ave+Bronx+NY+10462" target="_blank" class="btn-map">📍 Get Directions</a>
+    <a href="https://www.instagram.com/d.irisbeautysalon/" target="_blank" class="btn-ig">📸 Instagram</a>
+  </div>
+  <p class="address-line">Walk-ins welcome · Both phones: (347) 281-9339 · (718) 515-1683</p>
+</section>
+
+</body>
+</html>
