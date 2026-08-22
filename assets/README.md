@@ -6,6 +6,6 @@ Suggested approved local assets: `logo/diris-logo.svg`, `hero/diris-salon.webp`,
 
 | File | Purpose | Public-facing constraint |
 |---|---|---|
-| `visuals/mirror-ribbon-study.svg` | Local abstract mirror-and-ribbon material used in the homepage hero | Do not represent it as the salon, staff, customers, a hairstyle, a beauty result, or a real D’Iris mark. It is a non-documentary decorative treatment only. |
+| `visuals/mirror-ribbon-study.svg` | Local abstract mirror-and-ribbon material used behind the homepage’s chromatic-mirror 3D stage | Do not represent it as the salon, staff, customers, a hairstyle, a beauty result, inventory, or a real D’Iris mark. It is a non-documentary decorative treatment only. |
 
-Keep the hero contrast overlay in `index.html` when replacing this visual treatment.
+Keep the hero contrast overlay and the motion-independent call and directions actions in `index.html` when replacing this visual treatment. The CSS mirror planes are an abstract material effect, not a service claim or a salon photograph.
