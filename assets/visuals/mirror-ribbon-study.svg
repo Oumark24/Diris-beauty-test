@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" role="img" aria-label="Abstract mirror and ribbon material study">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#31141f"/>
+      <stop offset=".54" stop-color="#63283d"/>
+      <stop offset="1" stop-color="#2c1520"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fde6d0" stop-opacity=".62"/>
+      <stop offset=".34" stop-color="#d6a477" stop-opacity=".45"/>
+      <stop offset=".68" stop-color="#b64f71" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#f7d3de" stop-opacity=".28"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="49%" r="49%">
+      <stop offset="0" stop-color="#f0bd95" stop-opacity=".4"/>
+      <stop offset=".42" stop-color="#b64f71" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#31141f" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .07"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#base)"/>
+  <rect width="1536" height="1024" fill="url(#glow)"/>
+  <ellipse cx="1112" cy="509" rx="360" ry="434" fill="none" stroke="#f8f3ea" stroke-opacity=".25" stroke-width="3"/>
+  <ellipse cx="1112" cy="509" rx="316" ry="389" fill="none" stroke="#d6a477" stroke-opacity=".42" stroke-width="2"/>
+  <ellipse cx="1112" cy="509" rx="270" ry="342" fill="none" stroke="#f8f3ea" stroke-opacity=".14" stroke-width="1.5"/>
+  <path d="M689 162c274-141 476-75 678 143 139 151 139 329 17 526-116 188-332 248-630 154 230-93 356-220 378-383 19-142-67-252-260-332-68-29-129-59-183-90Z" fill="url(#ribbon)" fill-opacity=".48"/>
+  <path d="M750 763c245 95 441 58 578-101 110-127 125-280 45-457-58 175-160 284-307 329-129 39-235 82-316 129Z" fill="url(#ribbon)" fill-opacity=".34"/>
+  <path d="M767 208c207 32 380 128 518 286" fill="none" stroke="#f8f3ea" stroke-opacity=".34" stroke-width="4"/>
+  <path d="M757 780c233-67 402-188 509-363" fill="none" stroke="#d6a477" stroke-opacity=".66" stroke-width="5"/>
+  <path d="M845 157c175 77 307 193 397 348" fill="none" stroke="#b64f71" stroke-opacity=".72" stroke-width="8"/>
+  <circle cx="1194" cy="305" r="138" fill="#f4c6d2" fill-opacity=".12" filter="url(#blur)"/>
+  <rect width="1536" height="1024" filter="url(#grain)" opacity=".82"/>
+</svg>
